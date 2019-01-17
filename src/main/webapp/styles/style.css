@@ -6,7 +6,7 @@ body {
 }
 
 .container{
-    width: 90%;
+    width: 100%;
     margin: auto;
     overflow: hidden;
 }
@@ -36,11 +36,20 @@ header li {
 }
 
 table{
-    width:100%;
+    margin:auto;
+    width: 95%;
     border: 1px solid black;
     border-top: 3px solid black;
     border-bottom: 3px solid black;
 }
 th, td{
     padding: 15px;
+}
+
+#login{
+	margin: 0 auto;
+	width: 50%;
+	height: 50%;
+	padding: 10px;
+	text-align: center;
 }

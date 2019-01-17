@@ -1,16 +1,15 @@
-let xhrpend = new XMLHttpRequest();
+let xhrres = new XMLHttpRequest();
 
-xhrpend.open('GET', '../GetPending',true);
+xhrres.open('GET','../GetResolved',true);
 
-xhrpend.onreadystatechange = function(){
+xhrres.onreadystatechange = function(){
 	if(this.readyState === 4 && this.status === 200){
-		var table = document.getElementById("requesttable");
-		var jsonarray = [];
-		jsonarray = JSON.parse(this.responseText);
+		var array = [];
+		array = JSON.parse(this.responseText);
+		var table = document.getElementById("resolvedtable")
 		
-		
-		for(i in jsonarray){
-			var json = jsonarray[i];
+		for(i in array){
+			var json = array[i];
 			var row = table.insertRow(0);
 			var cell1 = row.insertCell(0);
 			var cell2 = row.insertCell(1);
@@ -24,7 +23,8 @@ xhrpend.onreadystatechange = function(){
 			cell5.innerHTML = json.rcpid;
 			
 		}
+		
 	}
-};
+}
 
-xhrpend.send();
+xhrres.send();

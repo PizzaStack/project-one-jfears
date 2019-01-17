@@ -17,7 +17,7 @@
                 </div>
             </div>
         </header>
-        <section>
+        <section id="filledininfo">
             <br>
             <label>Name: </label>
             <span id="namefield"></span><br><br>
@@ -27,9 +27,13 @@
             <span id="passwordfield"></span><br><br>
             <button type="button" id="editinfo">Edit Information</button>
         </section>
-        
+        <section>
+        	<form id="editform" action='../editinfo' method= 'POST'>
+        	</form>
+        </section>
         <script src="../scripts/infoscript.js"></script>
         <script src="../scripts/infoscriptusername.js"></script>
         <script src="../scripts/infoscriptpassword.js"></script>
+        <script src="../scripts/editinfoscript.js"></script>
     </body>
 </html>

@@ -57,4 +57,44 @@
     <servlet-name>GetPending</servlet-name>
     <url-pattern>/GetPending</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetResolved</display-name>
+    <servlet-name>GetResolved</servlet-name>
+    <servlet-class>com.revature.empremsys.servlet.GetResolved</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetResolved</servlet-name>
+    <url-pattern>/GetResolved</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>editinfo</display-name>
+    <servlet-name>editinfo</servlet-name>
+    <servlet-class>com.revature.empremsys.servlet.editinfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>editinfo</servlet-name>
+    <url-pattern>/editinfo</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetPendingMan</display-name>
+    <servlet-name>GetPendingMan</servlet-name>
+    <servlet-class>com.revature.empremsys.servlet.GetPendingMan</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetPendingMan</servlet-name>
+    <url-pattern>/GetPendingMan</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetResolvedMan</display-name>
+    <servlet-name>GetResolvedMan</servlet-name>
+    <servlet-class>com.revature.empremsys.servlet.GetResolvedMan</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetResolvedMan</servlet-name>
+    <url-pattern>/GetResolvedMan</url-pattern>
+  </servlet-mapping>
 </web-app>

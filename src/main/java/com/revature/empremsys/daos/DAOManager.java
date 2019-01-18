@@ -10,6 +10,7 @@ import java.sql.SQLException;
 public class DAOManager {
 	protected DAOParent dao = new DAOParent();
 	protected DAOReq req = new DAOReq();
+	protected DAOEmployee emp = new DAOEmployee();
 	
 	public Boolean checklogin(String username, String password) {
 		String sql = "select manpassword from manager where manusername=\'" + username + "\'" ;
@@ -28,7 +29,6 @@ public class DAOManager {
 	}
 	
 	
-
 	public JSONArray getPending() {
 		JSONArray reqs = req.getPending();
 		return reqs;
@@ -37,5 +37,10 @@ public class DAOManager {
 	public JSONArray getResolved() {
 		JSONArray reqs = req.getResolved();
 		return reqs;
+	}
+	
+	public JSONArray getEmployees() {
+		JSONArray emps = emp.getAll();
+		return emps;
 	}
 }

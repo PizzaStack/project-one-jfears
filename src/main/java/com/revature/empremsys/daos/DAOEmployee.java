@@ -6,6 +6,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import com.revature.empremsys.entity.Employee;
 
@@ -87,6 +88,36 @@ public class DAOEmployee {
 		JSONArray reqs = req.empPendingRequest(employee);
 		return reqs;
 	}
+	
+	public JSONArray getAll(int empid) {
+		Employee employee = makeEmployee(empid);
+		JSONArray reqs = req.getAllByEmp(employee);
+		return reqs;
+	}
+
+	private Employee makeEmployee(int empid) {
+		String sql = "select * from employee where empid=" + empid;
+		Employee employee = new Employee();
+		String firstName = "";
+		String lastName = "";
+		String password = "";
+		String username = "";
+		int empId = empid;
+		
+		try {
+			Statement statement = dao.connection.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+			if(rs.next()) {
+				firstName = rs.getString("empfirstname");
+				lastName = rs.getString("emplastname");
+				password = rs.getString("emppassword");
+				username = rs.getString("empusername");
+				employee = new Employee(firstName, lastName, username, password, empId);
+			}
+		}
+		catch(SQLException e) {e.printStackTrace();}
+		return employee;
+	}
 
 	public JSONArray getResolved(String username) {
 		Employee employee = makeEmployee(username);
@@ -111,5 +142,31 @@ public class DAOEmployee {
 			e.printStackTrace();
 		}
 		
+	}
+
+	public JSONArray getAll() {
+		String sql = "select * from employee";
+		JSONArray emps = new JSONArray();
+		
+		try {
+			Statement statement = dao.connection.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+			while(rs.next()) {
+				JSONObject obj = new JSONObject();
+				obj.put("empid", rs.getInt("empid"));
+				obj.put("empusername", rs.getString("empusername"));
+				obj.put("empfirstname", rs.getString("empfirstname"));
+				obj.put("emplastname", rs.getString("emplastname"));
+				emps.put(obj);
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return emps;
+	}
+
+	public void submitRequest(String username, String requesttitle, String requestdetails) {
+		Employee employee = makeEmployee(username);
+		req.submitRequest(employee, requesttitle, requestdetails);
 	}
 }

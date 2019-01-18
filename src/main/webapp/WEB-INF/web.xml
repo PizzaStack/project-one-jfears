@@ -97,4 +97,34 @@
     <servlet-name>GetResolvedMan</servlet-name>
     <url-pattern>/GetResolvedMan</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetEmps</display-name>
+    <servlet-name>GetEmps</servlet-name>
+    <servlet-class>com.revature.empremsys.servlet.GetEmps</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetEmps</servlet-name>
+    <url-pattern>/GetEmps</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FilterPending</display-name>
+    <servlet-name>FilterPending</servlet-name>
+    <servlet-class>com.revature.empremsys.servlet.FilterPending</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FilterPending</servlet-name>
+    <url-pattern>/FilterPending</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SubmitRequest</display-name>
+    <servlet-name>SubmitRequest</servlet-name>
+    <servlet-class>com.revature.empremsys.servlet.SubmitRequest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubmitRequest</servlet-name>
+    <url-pattern>/SubmitRequest</url-pattern>
+  </servlet-mapping>
 </web-app>

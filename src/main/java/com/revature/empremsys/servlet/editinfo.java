@@ -23,6 +23,7 @@ public class editinfo extends HttpServlet {
 			String newfirstname = request.getParameter("newfirstname");
 			String newlastname = request.getParameter("newlastname");
 			String newusername = request.getParameter("newusername");
+			session.setAttribute("username", newusername);
 			String newpass = request.getParameter("newpass");
 			 daoEmp.updateInfo(username, newfirstname, newlastname, newusername, newpass);
 			 response.sendRedirect("./pages/viewinformation.html");

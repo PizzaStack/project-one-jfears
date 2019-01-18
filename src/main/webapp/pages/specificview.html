@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="Justice">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Employee Requests</title>
+<link type="text/css" rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+	<header>
+
+		<div id="header" class="container">
+			<div id="branding">
+				<h1>Employee Reimbursement System</h1>
+				<h3>Employee Requests</h3>
+			</div>
+		</div>
+	</header>
+	<section>
+		<form>
+			<br><br>
+			<input type="number" placeholder="Employee ID" id="filterfield" name="filterfield">
+			<button type="button" id="filterbutton">Submit</button><br><br>
+		</form>
+	</section>
+	<table id="tablerow">
+		<tbody>
+			<tr>
+				<th>Request Id</th>
+				<th>Request Title</th>
+				<th>Request Details</th>
+				<th>Status</th>
+				<th>Receipt</th>
+				<th>Approving Manager</th>
+			</tr>
+		</tbody>
+	</table>
+	<table id="filteredtable">
+		<tbody></tbody>
+	</table>
+	<script src="../scripts/viewpendingfilter.js"></script>
+</body>
+</html>

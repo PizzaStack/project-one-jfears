@@ -1,5 +1,6 @@
 let xhrpendman = new XMLHttpRequest();
 
+
 xhrpendman.open('GET', '../GetPendingMan',true);
 
 xhrpendman.onreadystatechange = function(){
@@ -29,5 +30,10 @@ xhrpendman.onreadystatechange = function(){
 		}
 	}
 };
-
 xhrpendman.send();
+
+
+
+
+
+
